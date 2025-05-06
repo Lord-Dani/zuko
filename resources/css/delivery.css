@@ -1,0 +1,245 @@
+/* Стили для страницы доставки */
+.delivery-container {
+    max-width: 1200px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
+  }
+  
+  .delivery-section {
+    margin-bottom: 80px;
+  }
+ 
+  
+  .section-subtitle {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary);
+
+  }
+  
+
+  .delivery-hero {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  
+  .hero-image {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  
+  .hero-image:hover img {
+    transform: scale(1.03);
+  }
+  
+  .hero-text {
+    flex: 1;
+  }
+  
+  .hero-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .order-button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .order-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .steps-grid,
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .step-card,
+  .condition-card {
+    background: var(--light);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .step-card:hover,
+  .condition-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  
+  .step-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 15px;
+  }
+  
+  .condition-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  
+  .payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .payment-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .payment-method img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  .faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  
+  .faq-question {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    background: var(--light);
+    border: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    background: #f0f0f0;
+  }
+  
+  .faq-question::after {
+    content: '+';
+    font-size: 1.5em;
+  }
+  
+  .faq-question.active::after {
+    content: '-';
+  }
+  
+  .faq-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: white;
+  }
+  
+  .faq-answer p {
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0;
+  }
+  
+  /* Темная тема */
+  body.dark-mode .step-card,
+  body.dark-mode .condition-card,
+  body.dark-mode .faq-question {
+    background: #2d2d2d;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  }
+  body.dark-mode .faq-question:hover {
+    background: #3d3d3d;
+  }
+  
+  body.dark-mode .faq-answer {
+    background: #252525;
+  } 
+  
+  body.dark-mode .faq-question,
+  body.dark-mode .faq-answer p {
+  color: white !important;
+}
+ 
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .delivery-hero {
+      flex-direction: column;
+    }
+    
+    .steps-grid,
+    .conditions-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .payment-methods {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .section-title {
+      font-size: 2em;
+    }
+    
+    .section-subtitle {
+      font-size: 1.5em;
+    }
+  }
+
+
+
+
+
+
+
