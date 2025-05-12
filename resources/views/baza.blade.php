@@ -8,7 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/base.css">
+  <!-- <link rel="stylesheet" href="{{ asset('css/base.css')  }}"> -->
+  
   @vite(['resources/css/base.css'])        <!-- Базовые стили -->
+  
+ 
 </head>
 <body>
   <!-- Хедер с анимациями -->
@@ -29,21 +33,23 @@
   </header>
 
   <!-- Боковое меню -->
-  <div class="sidebar-menu" id="sidebar-menu">
+
+   <!-- Боковое меню -->
+   <div class="sidebar-menu" id="sidebar-menu">
     <div class="sidebar-content">
       <button class="close-btn">&times;</button>
       <nav class="sidebar-nav">
-        <a href="baza.html">Главная</a>
-        <a href="profile.html">Профиль</a>
-        <a href="about.html">О нас</a>
-        <a href="delivery.html" class="nav-link">Доставка</a>
-        <a href="vacancies.html">Вакансии</a>
-        <a href="login.html">Войти</a>
-        <a href="register.html">Регистрация</a>
-        <a href="baza.html#burgers">Бургеры</a>
-        <a href="baza.html#woks">Воки</a>
-        <a href="baza.html#snacks">Закуски</a>
-        <a href="baza.html#drinks">Напитки</a>
+        <a href="{{ route('menu') }}">Главная</a>
+        <a href="{{ route('profile') }}">Профиль</a>
+        <a href="{{ route('about') }}">О нас</a>
+        <a href="{{ route('delivery') }}">Доставка</a>
+        <a href="{{ route('vacancies') }}">Вакансии</a>
+        <a href="{{ route('login') }}">Войти</a>
+        <a href="{{ route('register') }}">Регистрация</a>
+        <a href="{{ route('menu') }}#burgers">Бургеры</a>
+        <a href="{{ route('menu') }}#woks">Воки</a>
+        <a href="{{ route('menu') }}#snacks">Закуски</a>
+        <a href="{{ route('menu') }}#drinks">Напитки</a>
       </nav>
     </div>
   </div>
@@ -144,11 +150,11 @@
             <div class="card-inner">
               <div class="card-face card-front">
                 <img src="images/burgers/vegan-burger.jpg" alt="Вегетарианский бургер" class="card-image">
-                <div class="card-title">Вегетарианский бургер</div>
+                <div class="card-title">Vegetarian бургер</div>
                 <div class="card-description">Нажмите, чтобы узнать подробности</div>
               </div>
               <div class="card-face card-back">
-                <div class="card-title">Вегетарианский бургер</div>
+                <div class="card-title">Vegetarian бургер</div>
                 <div class="card-description">Котлета из нута и овощей, авокадо, руккола и йогуртовый соус в цельнозерновой булочке.</div>
                 <button class="buy-btn" data-price="270">Купить за 270₽</button>
               </div>
@@ -560,12 +566,14 @@
         <div class="footer-section">
           <h4 class="footer-title">Навигация</h4>
           <nav class="footer-nav">
-            <a href="#burgers" class="nav-link">Бургеры</a>
-            <a href="#woks" class="nav-link">Воки</a>
-            <a href="#snacks" class="nav-link">Закуски</a>
-            <a href="#drinks" class="nav-link">Напитки</a>
+            <a href="{{ route('menu') }}#burgers" class="nav-link">Бургеры</a>
+            <a href="{{ route('menu') }}#woks" class="nav-link">Воки</a>
+            <a href="{{ route('menu') }}#snacks" class="nav-link">Закуски</a>
+            <a href="{{ route('menu') }}#drinks" class="nav-link">Напитки</a>
           </nav>
         </div>
+
+      
     
         <!-- Рабочее время -->
         <div class="footer-section">

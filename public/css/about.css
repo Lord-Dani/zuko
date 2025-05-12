@@ -1,0 +1,228 @@
+/* Стили для страницы "О нас" */
+.about-container {
+  max-width: 1200px;
+  margin: 100px auto 40px;
+  padding: 0 20px;
+}
+
+.about-section {
+  margin-bottom: 80px;
+}
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.about-image {
+  flex: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  min-height: 280px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.1em;
+  color: var(--dark); /* Добавлено для темной темы */
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.philosophy-card {
+  background: var(--light);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  color: var(--dark); /* Добавлено для темной темы */
+}
+
+.philosophy-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.philosophy-icon {
+  font-size: 3em;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.philosophy-card:hover .philosophy-icon {
+  transform: scale(1.2);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.team-member {
+  text-align: center;
+  background: var(--light);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  color: var(--dark); /* Добавлено для темной темы */
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover img {
+  filter: grayscale(0%);
+}
+
+.team-bio {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.achievement-item {
+  background: var(--light);
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  color: var(--dark); /* Добавлено для темной темы */
+}
+
+.achievement-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.locations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.location-card {
+  background: var(--light);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  color: var(--dark); /* Добавлено для темной темы */
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+}
+.location-card h3 {
+  color:var(--secondary);
+  margin-bottom: 15px;
+}
+.location-card h3 {
+  color:var(--secondary);
+  margin-bottom: 15px;
+}
+
+.location-card p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Темная тема */
+body.dark-mode .philosophy-card,
+body.dark-mode .team-member,
+body.dark-mode .achievement-item,
+body.dark-mode .location-card {
+  background: #2d2d2d;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .team-bio {
+  color: #aaa;
+}
+
+body.dark-mode .about-text p,
+body.dark-mode .location-card h3,
+body.dark-mode .philosophy-card p,
+body.dark-mode .team-member p:not(.team-bio),
+body.dark-mode .achievement-item .achievement-text,
+body.dark-mode .location-card p {
+  color: #ffffff;
+}
+
+body.dark-mode .achievement-number{
+  color: var(--secondary);
+}
+body.dark-mode .location-card h3{
+  color: var(--secondary);
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-image {
+    min-height: 300px;
+    width: 100%;
+  }
+  
+  .philosophy-grid,
+  .team-grid,
+  .achievements,
+  .locations {
+    grid-template-columns: 1fr;
+  }
+}

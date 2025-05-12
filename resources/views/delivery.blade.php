@@ -20,7 +20,7 @@
       <button class="theme-toggle-icon" id="theme-toggle-icon" title="Темная тема">☀</button>
     </div>
     <div class="header-center">
-      <a href="#" class="logo">Zuko</a>
+    <a href="{{ route('menu') }}" class="logo">Zuko</a>
     </div>
     <div class="header-right" id="basket-trigger">
       <div class="basket">
@@ -31,24 +31,27 @@
   </header>
 
   <!-- Боковое меню -->
-  <div class="sidebar-menu" id="sidebar-menu">
+
+   <!-- Боковое меню -->
+   <div class="sidebar-menu" id="sidebar-menu">
     <div class="sidebar-content">
       <button class="close-btn">&times;</button>
       <nav class="sidebar-nav">
-        <a href="baza.html">Главная</a>
-        <a href="profile.html">Профиль</a>
-        <a href="about.html">О нас</a>
-        <a href="delivery.html" class="nav-link">Доставка</a>
-        <a href="vacancies.html">Вакансии</a>
-        <a href="login.html">Войти</a>
-        <a href="register.html">Регистрация</a>
-        <a href="baza.html#burgers">Бургеры</a>
-        <a href="baza.html#woks">Воки</a>
-        <a href="baza.html#snacks">Закуски</a>
-        <a href="baza.html#drinks">Напитки</a>
+        <a href="{{ route('menu') }}">Главная</a>
+        <a href="{{ route('profile') }}">Профиль</a>
+        <a href="{{ route('about') }}">О нас</a>
+        <a href="{{ route('delivery') }}">Доставка</a>
+        <a href="{{ route('vacancies') }}">Вакансии</a>
+        <a href="{{ route('login') }}">Войти</a>
+        <a href="{{ route('register') }}">Регистрация</a>
+        <a href="{{ route('menu') }}#burgers">Бургеры</a>
+        <a href="{{ route('menu') }}#woks">Воки</a>
+        <a href="{{ route('menu') }}#snacks">Закуски</a>
+        <a href="{{ route('menu') }}#drinks">Напитки</a>
       </nav>
     </div>
   </div>
+
 
   <!-- Корзина -->
   <div class="basket-drawer" id="basket-drawer">
@@ -87,7 +90,7 @@
         </div>
         <div class="hero-text">
           <p>Быстрая и вкусная доставка ваших любимых блюд из Zuko прямо к вашему порогу!</p>
-          <a href="baza.html" class="order-button">Заказать сейчас</a>
+          <a href="{{ route('menu') }}" class="order-button">Заказать сейчас</a>      
         </div>
       </div>
     </section>
@@ -226,17 +229,17 @@
         </div>
       </div>
     
-      <div class="footer-section">
-        <h4 class="footer-title">Навигация</h4>
-        <nav class="footer-nav">
-          <a href="baza.html#burgers" class="nav-link">Бургеры</a>
-          <a href="baza.html#woks" class="nav-link">Воки</a>
-          <a href="baza.html#snacks" class="nav-link">Закуски</a>
-          <a href="baza.html#drinks" class="nav-link">Напитки</a>
-          <a href="about.html" class="nav-link">О нас</a>
-          <a href="delivery.html" class="nav-link">Доставка</a>
-        </nav>
-      </div>
+     
+        <!-- Навигация -->
+        <div class="footer-section">
+          <h4 class="footer-title">Навигация</h4>
+          <nav class="footer-nav">
+            <a href="{{ route('menu') }}#burgers" class="nav-link">Бургеры</a>
+            <a href="{{ route('menu') }}#woks" class="nav-link">Воки</a>
+            <a href="{{ route('menu') }}#snacks" class="nav-link">Закуски</a>
+            <a href="{{ route('menu') }}#drinks" class="nav-link">Напитки</a>
+          </nav>
+        </div>
     
       <div class="footer-section">
         <h4 class="footer-title">Часы работы</h4>

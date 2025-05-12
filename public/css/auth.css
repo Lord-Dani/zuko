@@ -1,0 +1,321 @@
+/* auth.css - Стили для страниц авторизации */
+
+/* Общие стили для всех форм */
+.auth-container {
+  max-width: 500px;
+  margin: 200px auto;
+  padding: 30px;
+  background: var(--light);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+
+/* Заголовок формы */
+.auth-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--dark);
+  font-size: 2em;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.auth-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(190deg,#2ecc71,#4a90e2);
+  border-radius: 3px;
+}
+
+/* Поля ввода */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--dark);
+  font-size: 1.1em;
+}
+
+.form-control {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  background: var(--light);
+  color: var(--dark);
+  font-size: 1em;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Контейнер пароля */
+.password-container {
+  position: relative;
+}
+
+.password-container .form-control {
+  padding-right: 40px; /* Для иконки глаза */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 1.2em;
+  z-index: 2;
+}
+
+/* Чекбокс согласия */
+.agree-group {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.agree-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #4a90e2;
+}
+
+.agree-label {
+  margin: 0 !important;
+  font-size: 0.95em;
+  color: var(--dark);
+}
+
+/* Кнопка отправки */
+.auth-btn {
+  padding: 15px;
+  background: linear-gradient(135deg, #4a90e2, #2ecc71);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.auth-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+}
+
+/* Футер формы */
+.auth-footer {
+  margin-top: 25px;
+  text-align: center;
+  color: var(--dark);
+}
+
+.auth-link {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+  color: #4a90e2;
+}
+
+/* Темная тема */
+body.dark-mode .auth-container {
+  background: #2d2d2d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .auth-title,
+body.dark-mode .agree-label,
+body.dark-mode .form-group label {
+  color: #ffffff;
+}
+
+body.dark-mode .form-control {
+  background: #3a3a3a;
+  border-color: rgba(74, 144, 226, 0.2);
+  color: #f5f5f5;
+}
+
+body.dark-mode .back-btn {
+  color: #fff;
+}
+
+body.dark-mode .back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .auth-container {
+    margin: 100px auto 40px;
+    padding: 25px;
+  }
+
+  .back-btn {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 80px 15px 30px;
+    padding: 20px;
+  }
+
+  .auth-title {
+    font-size: 1.6em;
+  }
+
+  .agree-label {
+    font-size: 0.9em;
+  }
+}
+
+
+/* В CSS */
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border-color:  rgba(255, 255, 255, 255);
+  color: var(--dark);
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 30px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  box-shadow: 2px 2px 2px 2px   rgba(101, 106, 111, 0.2);
+}
+
+.back-btn .back-text {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(74, 144, 226, 0.2);
+  transform: translateX(-5px);
+  box-shadow: 2px 2px 10px rgba(74, 144, 226, 0.2);
+}
+
+.back-btn:hover .back-text {
+  transform: translateX(3px);
+}
+
+/* Адаптивность - скрываем текст на мобильных */
+@media (max-width: 480px) {
+  .back-text {
+    display: none;
+  }
+  
+  .back-btn {
+    padding: 8px 15px;
+  }
+}
+
+
+
+
+.back-btn {
+  position: relative;
+  background: var(--light);
+  border: none;
+  padding: 8px 25px;
+  border-radius: 30px;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+/* Градиентная "рамка" */
+.back-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    rgba(74, 144, 226, 0.4),
+    rgba(46, 204, 113, 0.4)
+  );
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+/* Основной фон кнопки */
+.back-btn::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  background: var(--light);
+  border-radius: calc(30px - 1px);
+  z-index: -1;
+}
+
+/* Анимация при наведении */
+.back-btn:hover::before {
+  opacity: 0.8;
+  background: linear-gradient(
+    45deg,
+    rgba(74, 144, 226, 0.6),
+    rgba(46, 204, 113, 0.6)
+  );
+}
+
+/* Текст кнопки */
+.back-btn span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dark);
+  z-index: 1;
+}
+
+/* Темная тема */
+body.dark-mode .back-btn::after {
+  background: #2d2d2d;
+}
+
+body.dark-mode .back-btn span {
+  color: #fff;
+}

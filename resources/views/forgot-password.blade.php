@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/auth.css">
 
-  @vite(['resources/css/base.css'])        <!-- Базовые стили -->
+  @vite(['resources/css/base.css', 'resources/css/auth.css'])        <!-- Базовые стили -->
   @vite(['resources/js/auth.js'])         <!-- Для auth-страниц -->
   <style>
     .auth-title::after {
@@ -26,7 +26,7 @@
       <button class="theme-toggle-icon" id="theme-toggle-icon" title="Темная тема">☀</button>
     </div>
     <div class="header-center">
-      <a href="baza.html" class="logo">Zuko</a>
+    <a href="{{ route('menu') }}" class="logo">Zuko</a>
     </div>
     <div class="header-right">
     </div>
@@ -51,8 +51,8 @@
       </form>
       
       <div class="auth-footer">
-        <p>Вспомнили пароль? <a href="login.html" class="auth-link">Войти</a></p>
-        <p>Нет аккаунта? <a href="register.html" class="auth-link">Зарегистрироваться</a></p>
+        <p>Вспомнили пароль? <a href="{{ route('login') }}" class="auth-link">Войти</a></p>
+        <p>Нет аккаунта? <a href="{{ route('register') }}" class="auth-link">Зарегистрироваться</a></p>
       </div>
     </div>
   </main>
